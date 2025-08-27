@@ -3,6 +3,11 @@ import { ERPLayout } from '@/components/layout/ERPLayout';
 import { Dashboard } from '@/components/dashboard/Dashboard';
 import { SalesModule } from '@/components/sales/SalesModule';
 import { InventoryModule } from '@/components/inventory/InventoryModule';
+import { PurchasesModule } from '@/components/purchases/PurchasesModule';
+import { FinancialModule } from '@/components/financial/FinancialModule';
+import { HRModule } from '@/components/hr/HRModule';
+import { ProductionModule } from '@/components/production/ProductionModule';
+import { ReportsModule } from '@/components/reports/ReportsModule';
 
 const Index = () => {
   const [activeModule, setActiveModule] = useState('dashboard');
@@ -16,40 +21,15 @@ const Index = () => {
       case 'inventory':
         return <InventoryModule />;
       case 'purchases':
-        return (
-          <div className="text-center py-12">
-            <h2 className="text-2xl font-bold mb-4">Módulo de Compras</h2>
-            <p className="text-muted-foreground">Em desenvolvimento - Gestão de fornecedores e ordens de compra</p>
-          </div>
-        );
+        return <PurchasesModule />;
       case 'financial':
-        return (
-          <div className="text-center py-12">
-            <h2 className="text-2xl font-bold mb-4">Módulo Financeiro</h2>
-            <p className="text-muted-foreground">Em desenvolvimento - Contas a pagar/receber e fluxo de caixa</p>
-          </div>
-        );
+        return <FinancialModule />;
       case 'hr':
-        return (
-          <div className="text-center py-12">
-            <h2 className="text-2xl font-bold mb-4">Módulo de RH</h2>
-            <p className="text-muted-foreground">Em desenvolvimento - Gestão de funcionários e folha de pagamento</p>
-          </div>
-        );
+        return <HRModule />;
       case 'production':
-        return (
-          <div className="text-center py-12">
-            <h2 className="text-2xl font-bold mb-4">Módulo de Produção</h2>
-            <p className="text-muted-foreground">Em desenvolvimento - Ordens de produção e planejamento</p>
-          </div>
-        );
+        return <ProductionModule />;
       case 'reports':
-        return (
-          <div className="text-center py-12">
-            <h2 className="text-2xl font-bold mb-4">Módulo de Relatórios</h2>
-            <p className="text-muted-foreground">Em desenvolvimento - Analytics e relatórios gerenciais</p>
-          </div>
-        );
+        return <ReportsModule />;
       default:
         return <Dashboard />;
     }
